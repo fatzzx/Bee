@@ -1,5 +1,6 @@
 //Author -> fatzzx
 //Exercise -> 3058
+//OBI
 #include <stdio.h>
 
 int main (){

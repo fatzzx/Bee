@@ -1,7 +1,8 @@
-#include <stdio.h>
-
 //Author -> fatzzx
 //Exercise -> 3058
+//OBI
+#include <stdio.h>
+
 int main (){
 
     int n, ini, f, contador =0, soma;
