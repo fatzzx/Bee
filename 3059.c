@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+//Author -> fatzzx
+//Exercise -> 3058
 int main (){
 
     int n, ini, f, contador =0, soma;
@@ -18,7 +20,6 @@ int main (){
         }
     }
     printf("%d\n", contador);
-
-
+    
     return 0;
 }
