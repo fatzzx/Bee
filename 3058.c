@@ -1,3 +1,5 @@
+//Author -> fatzzx
+//Exercise -> 3058
 #include <stdio.h>
 
 int main (){
@@ -16,8 +18,5 @@ int main (){
     }
     result = result * 1000;
     printf("%.2f\n", result);
-    
-
-
     return 0;
 }
