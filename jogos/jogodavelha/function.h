@@ -479,7 +479,7 @@ void menu(int *m, int *n, int *g, int *numDeJogadores, int *linhas, int *colunas
   getchar();
 }
 
-void parabens(int numDeJogadores, char jogadores[][60])
+void parabens(int numDeJogadores, char *jogadores)
 {
   printf(" /^ ^\\\n");
   printf("/ 0 0 \\\n");
