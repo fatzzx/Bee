@@ -1,5 +1,5 @@
 //Author -> fatzzx
-//Exercise -> 3058
+//Exercise -> 3059
 //OBI
 #include <stdio.h>
 
