@@ -160,9 +160,7 @@ int checagem_igual(tp_listase *l1, tp_listase *l2){
 }
 
 int lista_circular(tp_listase **l1, tp_listase **l2){
-
-
-
+printf("OLa");
 }
 
 
