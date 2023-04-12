@@ -1,10 +1,17 @@
-//bitwise
+//bitewise
 #include <stdio.h>
 
 int main(){
 
-    int x = 1;
-    printf("%d", x << 1);
+    int x;
+    scanf("%d", &x);
+    if((x>>1)<<1 == x){
+        printf("par\n");
+    }
+    else{
+        printf("impar\n");
+    }
 
     return 0;
 }
+
