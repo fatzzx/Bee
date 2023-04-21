@@ -21,8 +21,8 @@ int main() {
        while(1){
         marcaJogoDaVelha(linhas, coluna, linha, jogodavelha[0],colunas,s[contador%numDeJogadores]);
         imprimir_jogo_da_velha(numDeJogadores, jogodavelha[0], jogadores, linhas, colunas);
-        if(verificaVencedor(numDeJogadores,jogadores, jogodavelha[0],  linhas,  colunas, s[contador%numDeJogadores], condicaoDeV) == 1){
-          parabens(numDeJogadores, jogadores[contador%numDeJogadores]);
+        if(verificaVencedor(jogodavelha[0],  linhas,  colunas, s[contador%numDeJogadores], condicaoDeV) == 1){
+          parabens(jogadores[contador%numDeJogadores]);
           break;
         }
         contador++;
@@ -32,8 +32,8 @@ int main() {
        while(1){
          marcaJogoDaVelhaGravidade(numDeJogadores, linhas, coluna, linha, jogodavelha[0], colunas, s[contador % numDeJogadores],jogadores);
         imprimir_jogo_da_velha(numDeJogadores, jogodavelha[0], jogadores, linhas, colunas);
-        if(verificaVencedor(numDeJogadores,jogadores, jogodavelha[0],  linhas,  colunas, s[contador%numDeJogadores], condicaoDeV) == 1){
-          parabens(numDeJogadores, jogadores[contador%numDeJogadores]);
+        if(verificaVencedor(jogodavelha[0],  linhas,  colunas, s[contador%numDeJogadores], condicaoDeV) == 1){
+          parabens(jogadores[contador%numDeJogadores]);
           break;
         }
         contador++;
