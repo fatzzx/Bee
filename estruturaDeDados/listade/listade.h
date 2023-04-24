@@ -91,7 +91,7 @@ int remove_listade(tp_listade *lista, tp_item e){
 tp_no *busca_listade(tp_listade *lista, tp_item e){
     tp_no *atu;
     atu = lista->ini;
-    while((atu != NULL) && (atu->ant != e)){
+    while((atu != NULL) && (atu->info != e)){
         atu = atu->prox;
     }
     return atu;
