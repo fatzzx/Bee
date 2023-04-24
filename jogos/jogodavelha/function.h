@@ -9,7 +9,7 @@
 // Prof se estiver usando o dev só precisa mudar essa função para rodar
 void limpaTerminal()
 {
-  system("cls"); // Seria system("cls"); no caso
+  system("clear"); // Seria system("cls"); no caso
 }
 
 void recebe_nome_usuario(char *nome)
@@ -285,7 +285,7 @@ void marcaJogoDaVelhaGravidade(int numDeJogadores, int linhas, int coluna, int l
   imprimir_jogo_da_velha(numDeJogadores, jogoDaVelha, jogadores, linhas, colunas);
 }
 
-int verificaVencedor(int num_jogadores, char jogadores[][60], char *jogo_da_velha, int linhas, int colunas, char simbolo, int condicaoDeVitoria)
+int verificaVencedor(char *jogo_da_velha, int linhas, int colunas, char simbolo, int condicaoDeVitoria)
 {
   // Verifica as linhas
   for (int i = 0; i < linhas; i++)
@@ -479,7 +479,7 @@ void menu(int *m, int *n, int *g, int *numDeJogadores, int *linhas, int *colunas
   getchar();
 }
 
-void parabens(int numDeJogadores, char *jogadores)
+void parabens(char *jogadores)
 {
   printf(" /^ ^\\\n");
   printf("/ 0 0 \\\n");

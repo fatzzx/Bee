@@ -80,7 +80,6 @@ tp_pilha *destroi_pilha(tp_pilha *pilha) {
 void imprime_pilha(tp_pilha *pilha) {
      tp_pilha *pilha_aux;
      tp_item e;
-     //cria e inicializa uma pilha auxiliar
 	 pilha_aux=inicializa_pilha();
      
 	 while (!pilha_vazia(pilha))
