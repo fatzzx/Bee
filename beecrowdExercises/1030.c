@@ -117,6 +117,7 @@ int main () {
   insert_sll_at_end(&l, 7);
   remove_elementos_com_salto(&l, 2);
   print_sll(l);
+
   
 
   return 0;
