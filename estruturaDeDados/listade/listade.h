@@ -88,4 +88,25 @@ int remove_listade(tp_listade *lista, tp_item e){
 	}
 }
 
+tp_no *busca_listade(tp_listade *lista, tp_item e){
+    tp_no *atu;
+    atu = lista->ini;
+    while((atu != NULL) && (atu->ant != e)){
+        atu = atu->prox;
+    }
+    return atu;
+}
+
+tp_listade *destroi_listade(tp_listade *lista){
+    tp_no *atu;
+    atu = lista->ini;
+    while(atu != NULL){
+        lista->ini  = atu->prox;
+        free(atu);
+        atu = lista->ini;
+    }
+    free(lista);
+    return NULL;
+}
+
 #endif

@@ -9,7 +9,7 @@
 // Prof se estiver usando o dev só precisa mudar essa função para rodar
 void limpaTerminal()
 {
-  system("clear"); // Seria system("cls"); no caso
+  system("cls"); // Seria system("cls"); no caso
 }
 
 void recebe_nome_usuario(char *nome)
