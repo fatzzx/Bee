@@ -53,11 +53,11 @@ int main() {
   //print_stack(main);
   //distribute_cards(main_deck[0], &player1, &player2, &player3, &player4);
   
-  test_game_on(&main, &table, &player1, &player2, &player3, &player4);
+  //test_game_on(&main, &table, &player1, &player2, &player3, &player4);
 
 
   //printf("Game start\n");
-  //game_on(main);
+  game_on(main);
   
   /*
   print_cards(main);

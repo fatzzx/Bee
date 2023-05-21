@@ -15,7 +15,8 @@ void init_deck(player *players, stack *main) {
     for (int i = 0; i < 7; i++) { // 7 cards
           pop(main, &removed);
           printf("carta %i ", i);
-          players->cards[i] = removed;
+          // singly_list *temp = players->cards;
+          insert_node(&players->cards, removed);
     }
     printf("\n");
 }
@@ -26,14 +27,18 @@ void init_players(type_dlist *players, int total, stack *main){
     for (int i = 0; i < total; i++) {
         // Select player's name
         player user;
+        user.cards = init_singly();
         printf("Type %i° challenger's name: ", i+1);
         scanf("%s", pname);
-      
         user.name = pname;
         init_deck(&user, main); // gets deck from stack
         insert_dlist_at_end(players, user); // Inserts
     }
 }
+
+
+
+
 
 int pit_four() { // "Cava 4"
     // Lógica pro player seguinte cavar 4
@@ -72,40 +77,40 @@ int play_card(deck *top_card, deck *new_card) {
 
 
 
-void game_on(stack main) {
-    // Main game loop 
+// void game_on(stack main) {
+//     // Main game loop 
   
-    int turn = 0;
-    int gaymers = 0;
+//     int turn = 0;
+//     int gaymers = 0;
 
-    printf("How many people will play?  \n");
-    scanf("%d", &gaymers);
+//     printf("How many people will play?  \n");
+//     scanf("%d", &gaymers);
 
-    // Create a doubly-linked list
-    type_dlist *players;
-    players = start_dlist();
+//     // Create a doubly-linked list
+//     type_dlist *players;
+//     players = start_dlist();
 
-    // Initialize players and decks
-    init_players(players, gaymers, &main);
-    // Make it a circular list
-    players->end->next = players->start;
+//     // Initialize players and decks
+//     init_players(players, gaymers, &main);
+//     // Make it a circular list
+//     players->end->next = players->start;
 
-    // Point to first player
-    type_knot *current;
-    current = players->start;
+//     // Point to first player
+//     type_knot *current;
+//     current = players->start;
 
-    // Plays the game until we have a winner
-    while(1) {
-        printf("Turn of player %s", current->info.name.c_str());
-        printf("\n");
+//     // Plays the game until we have a winner
+//     while(1) {
+//         printf("Turn of player %s", current->info.name.c_str());
+//         printf("\n");
         
-        turn++;
-        if (turn == 10) break;
-        current = current->next;
-    }
+//         turn++;
+//         if (turn == 10) break;
+//         current = current->next;
+//     }
 
-    printf("\nwow");
-}
+//     printf("\nwow");
+// }
 
 void distribute_cards(stack *main_stack, singly_list **player1, singly_list **player2, singly_list **player3, singly_list **player4) {
   deck card;
@@ -216,7 +221,51 @@ void test_game_on(stack *main, stack *table, singly_list **player1, singly_list 
   view_table(table);
   view_hand(*player1);
   
+}
+
+void game_on(stack main) {
+    // Main game loop 
   
+    int turn = 0;
+    int gaymers = 0;
+    int position;
+    stack table;
+    init_stack(&table);
+
+    printf("How many people will play?  \n");
+    scanf("%d", &gaymers);
+
+    // Create a doubly-linked list
+    type_dlist *players;
+    players = start_dlist();
+
+    // Initialize players and decks
+    init_players(players, gaymers, &main);
+    // Make it a circular list
+    players->end->next = players->start;
+
+    // Point to first player
+    type_knot *current;
+    current = players->start;
+
+    // Plays the game until we have a winner
+
+    first_card(&main, &table);
+    while(1) {
+        view_table(&table);
+        printf("Turn of player %s\n", current->info.name.c_str());
+        view_hand(current->info.cards);
+        printf("Qual carta deseja inserir\n");
+        scanf("%d", &position);
+        play_card_test(&current->info.cards, &table, position);
+        
+        
+        turn++;
+        if (turn == 10) break;
+        current = current->next;
+    }
+
+    printf("\nwow");
 }
 
 #endif

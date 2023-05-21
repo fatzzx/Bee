@@ -7,10 +7,11 @@
 #include <string.h>
 #include <string>
 #include "stack.hpp"
+#include "singly_listtest.hpp"
 
 
 typedef struct {
-    deck cards[60];
+    singly_list *cards;
     std::string name;
 } player;
 
